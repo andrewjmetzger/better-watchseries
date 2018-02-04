@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.1.1
+// @version      1.1.2
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
@@ -50,7 +50,7 @@ WS_TARGET = 'a#video-embed';
 /*************************************************
 *      END OF SETTINGS - STOP CHANGING STUFF     *
 **************************************************/
-
+GM_log('Hello! Script loaded.');
 var redirected = false;
 
 var buttons = ['Video', 'Play', 'Yes', 'watch', 'Continue', 'Please', 'wait', 'Free', 'Continue as Free User', WS_BUTTON];
@@ -65,7 +65,7 @@ else if (inArray(url, ['/pc/'])) {
   location.href = url.replace('/pc/', '/playerframe.php?Id=').replace(/\/$/, '');
 }
 else if (inArray(url, [WS_DOMAIN + '/' + WS_PATH])) {
-    GM_log('Redirecting to host: ' + $(WS_TARGET).attr('href'));
+    GM_log('Found WS; Redirecting to host: ' + $(WS_TARGET).attr('href'));
   location.href = $(WS_TARGET).attr('href');
 }
 else if (findSubmit()) { }
