@@ -51,14 +51,13 @@ WS_TARGET = 'a#video-embed';
 *      END OF SETTINGS - STOP CHANGING STUFF     *
 **************************************************/
 
-
-GM_log('Better WatchSeries has loaded successfully. Hi there. :-)');
+console.log('BWS loaded successfully. Hi!');
 var redirected = false;
 
 var buttons = ['Video', 'Play', 'Yes', 'watch', 'Continue', 'Please', 'wait', 'Free', 'Continue as Free User', WS_BUTTON];
 
 var url = location.href;
-GM_log('Detected URL: ' + WS_DOMAIN + '/' + WS_PATH);
+console.log('Detected URL: ' + WS_DOMAIN + '/' + WS_PATH);
 
 if (inArray(url, ['/rc.php?'])) {
   location.href = url.replace('/rc.php?', '/videos.php?');
@@ -67,7 +66,7 @@ else if (inArray(url, ['/pc/'])) {
   location.href = url.replace('/pc/', '/playerframe.php?Id=').replace(/\/$/, '');
 }
 else if (inArray(url, [WS_DOMAIN + '/' + WS_PATH])) {
-    GM_log('Found WS; Redirecting to host: ' + $(WS_TARGET).attr('href'));
+    console.log('At WS; Redirecting to host: ' + $(WS_TARGET).attr('href'));
   location.href = $(WS_TARGET).attr('href');
 }
 else if (findSubmit()) { }
@@ -102,7 +101,7 @@ function findForm() {
               console.log(inputs[y], inputs[y].click);
               redirected = true;
               inputs[y].click();
-              GM_log('Button found: Clicked the button called \'' + WS_BUTTON + '\' (findForm).');
+              console.log('Button found: Clicked the button called \'' + WS_BUTTON + '\' (findForm).');
               // document.forms[x].submit();
               return true;
             }
@@ -127,7 +126,7 @@ function findSubmit() {
           else if (inputs[y].click) {
             inputs[y].click();
           }
-          GM_log('Button found: Clicked the button called \'' + WS_BUTTON + '\' (findSubmit).');
+          console.log('Button found: Clicked the button called \'' + WS_BUTTON + '\' (findSubmit).');
           return true;
         }
       }
