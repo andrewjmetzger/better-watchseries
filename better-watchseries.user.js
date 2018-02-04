@@ -6,29 +6,16 @@
 // @license      MIT
 //
 // @namespace    https://github.com/andrewjmetzger/
-// @updateURL    https://openuserjs.org/meta/andrewjmetzger/better-watchseries.meta.js
-// @version      1.0.1
+// @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
+// @version      1.1.0
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
 // @include      http://*/videos.php?Id=*
-// @include      http://*.cc/pc/*/
-// @include      http://*.ws/file/*
-// @include      http://*.ws/video/*
-// @include      http://*.me/video/*
-// @include      http://*.co/video/*
-// @include      http://*.co/play/*
-// @include      http://*sharesix.*/*
-// @include      http://*filenuke.*/*
-// @include      http://www.putlocker.ws/file/*
 // @include      http://daclips.in/*
 // @include      http://gorillavid.in/*
 // @include      http://movpod.in/*
-// @include      http://nosvideo.com/*
-// @include      http://mightyupload.com/*
-// @include      http://www.watchfreeinhd.com/*
-// @include      http://watchseries.lt/open*
-// @include      http://dwatchseries.ac/link*
+// @include      http://dwatchseries.ac/*
 // ==/UserScript==
 
 /*************************************************
