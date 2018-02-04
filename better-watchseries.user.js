@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.2.2
+// @version      1.3.0
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
@@ -44,7 +44,7 @@ WS_BUTTON = 'Click Here to Play';
 
 // WS_TARGET : The partial CSS selector for WS_BUTTON. Don't change it if you don't understand. (Case-sensitive)
 
-WS_TARGET = 'a#video-embed';
+WS_TARGET = 'a.push_button blue';
 
 
 /*************************************************
