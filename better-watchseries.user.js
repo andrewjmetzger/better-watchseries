@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.1.4
+// @version      1.2.0
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
