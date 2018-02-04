@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.2.0
+// @version      1.2.1
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
@@ -51,7 +51,7 @@ WS_TARGET = 'a#video-embed';
 *      END OF SETTINGS - STOP CHANGING STUFF     *
 **************************************************/
 
-console.log('BWS loaded successfully. Hi!');
+console.log('Better WatchSeries has loaded. Hello there.');
 var redirected = false;
 
 var buttons = ['Video', 'Play', 'Yes', 'watch', 'Continue', 'Please', 'wait', 'Free', 'Continue as Free User', WS_BUTTON];
