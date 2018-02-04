@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/better-watchseries.meta.js
-// @version      1.0.0
+// @version      1.0.1
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
@@ -22,10 +22,11 @@
 // @include      http://*filenuke.*/*
 // @include      http://www.putlocker.ws/file/*
 // @include      http://daclips.in/*
+// @include      http://gorillavid.in/*
+// @include      http://movpod.in/*
 // @include      http://nosvideo.com/*
 // @include      http://mightyupload.com/*
 // @include      http://www.watchfreeinhd.com/*
-// @include      http://www.embedder.eu/frame.php?url=*
 // @include      http://watchseries.lt/open*
 // @include      http://dwatchseries.ac/link*
 // ==/UserScript==
@@ -70,16 +71,13 @@ var buttons = ['Video', 'Play', 'Yes', 'watch', 'Continue', 'Please', 'wait', 'F
 var url = location.href;
 GM_log('Detected URL: ' + WS_DOMAIN + '/' + WS_PATH);
 
-if (inArray(url, ['www.embedder.eu'])) {
-  location.href = url.replace('http://www.embedder.eu/frame.php?url=', '');
-}
-else if (inArray(url, ['/rc.php?'])) {
+if (inArray(url, ['/rc.php?'])) {
   location.href = url.replace('/rc.php?', '/videos.php?');
 }
 else if (inArray(url, ['/pc/'])) {
   location.href = url.replace('/pc/', '/playerframe.php?Id=').replace(/\/$/, '');
 }
-else if (inArray(url, ['watchseries.lt/open', WS_DOMAIN + '/' + WS_PATH])) {
+else if (inArray(url, [WS_DOMAIN + '/' + WS_PATH])) {
     GM_log('Redirecting to host: ' + $(WS_TARGET).attr('href'));
   location.href = $(WS_TARGET).attr('href');
 }
