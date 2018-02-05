@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.5.0
+// @version      1.6.0
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
@@ -60,7 +60,7 @@ var buttons = ['Video', 'Play', 'Yes', 'watch', 'Continue', 'Please', 'wait', 'F
 var url = location.href;
 console.log('Detected URL: ' + url);
 var WS_URL = WS_DOMAIN + '/' + WS_PATH;
-console.log(WS_URL);
+
 
 if (inArray(url, ['/rc.php?'])) {
   location.href = url.replace('/rc.php?', '/videos.php?');
@@ -68,10 +68,11 @@ if (inArray(url, ['/rc.php?'])) {
 else if (inArray(url, ['/pc/'])) {
   location.href = url.replace('/pc/', '/playerframe.php?Id=').replace(/\/$/, '');
 }
-else if (inArray(url, [WS_URL])) {
+else if (url.indexOf(WS_URL) != -1) {
   tmp = document.getElementsByClassName(WS_TARGET);
   dest = tmp.attr('href');
-    console.log('At WS; Redirecting to : ' + dest);
+  console.log('dest == ' + dest);
+  console.log('At WS; Redirecting to : ' + dest);
   // location.href = getElementsByClassName($(WS_TARGET)).attr('href');
 }
 else if (findSubmit()) { }
