@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.4.1
+// @version      1.4.2
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
@@ -67,7 +67,9 @@ else if (inArray(url, ['/pc/'])) {
   location.href = url.replace('/pc/', '/playerframe.php?Id=').replace(/\/$/, '');
 }
 else if (inArray(url, [WS_DOMAIN + '/' + WS_PATH])) {
-    console.log('At WS; Redirecting to : ' + document.getElementsByClassName($(WS_TARGET)).attr('href'));
+  tmp = document.getElementsByClassName(WS_TARGET);
+  dest = tmp.attr('href');
+    console.log('At WS; Redirecting to : ' + dest);
   // location.href = getElementsByClassName($(WS_TARGET)).attr('href');
 }
 else if (findSubmit()) { }
