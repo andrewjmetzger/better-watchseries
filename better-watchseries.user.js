@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.3.0
+// @version      1.4.0
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
@@ -24,9 +24,10 @@
 **************************************************/
 
 
-// WS_DOMAIN : The current WatchSeries domain. For example, `watchseries.to`. (Case-insensitive)
+// WS_DOMAIN : The current WatchSeries domain. 
+//             For example, `www.watchseries.to`. (Case-insensitive)
 
-WS_DOMAIN = 'dwatchseries.ac';
+WS_DOMAIN = 'www.dwatchseries.ac';
 
 
 // WS_PATH : In the full URL of a video on WatchSeries, the part after the domain, and before the video host.
@@ -37,7 +38,7 @@ WS_PATH = 'link';
 
 
 // WS_BUTTON : After clicking on a video link, the text of the button that goes to the video host.
-//               For example, `Click here to play`. (Case-sensitive)
+//             For example, `Click here to play`. (Case-sensitive)
 
 WS_BUTTON = 'Click Here to Play';
 
@@ -58,7 +59,7 @@ var redirected = false;
 var buttons = ['Video', 'Play', 'Yes', 'watch', 'Continue', 'Please', 'wait', 'Free', 'Continue as Free User', WS_BUTTON];
 
 var url = location.href;
-console.log('Detected URL: ' + WS_DOMAIN + '/' + WS_PATH);
+console.log('Detected URL: ' + url);
 
 if (inArray(url, ['/rc.php?'])) {
   location.href = url.replace('/rc.php?', '/videos.php?');
@@ -67,8 +68,8 @@ else if (inArray(url, ['/pc/'])) {
   location.href = url.replace('/pc/', '/playerframe.php?Id=').replace(/\/$/, '');
 }
 else if (inArray(url, [WS_DOMAIN + '/' + WS_PATH])) {
-    console.log('At WS; Redirecting to host: ' + $(WS_TARGET).attr('href'));
-  location.href = $(WS_TARGET).attr('href');
+    console.log('At WS; Redirecting to : ' + getElementsByClassName($(WS_TARGET)).attr('href'));
+  // location.href = getElementsByClassName($(WS_TARGET)).attr('href');
 }
 else if (findSubmit()) { }
 
