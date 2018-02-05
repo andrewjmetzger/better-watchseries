@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.6.4
+// @version      1.6.5
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
@@ -77,7 +77,7 @@ else if (url.indexOf(WS_URL) != -1) {
     dest = dest.toString();
     console.log('dest == ' + dest);
     console.log('Redirecting to : ' + dest);
-  // location.href = dest;
+    location.href = dest;
 }
 else if (findSubmit()) { }
 
@@ -111,7 +111,7 @@ function findForm() {
               console.log(inputs[y], inputs[y].click);
               redirected = true;
               inputs[y].click();
-              console.log('Button found: Clicked the button called \'' + WS_BUTTON + '\' (findForm).');
+              console.log('Button found: Clicked the button called \'' + inputs[y].value + '\' (findForm).');
               // document.forms[x].submit();
               return true;
             }
@@ -136,7 +136,7 @@ function findSubmit() {
           else if (inputs[y].click) {
             inputs[y].click();
           }
-          console.log('Button found: Clicked the button called \'' + WS_BUTTON + '\' (findSubmit).');
+          console.log('Button found: Clicked the button called \'' + inputs[y].value + '\' (findSubmit).');
           return true;
         }
       }
