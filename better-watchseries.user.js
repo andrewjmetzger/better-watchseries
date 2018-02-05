@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.6.0
+// @version      1.6.1
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
@@ -53,12 +53,15 @@ WS_TARGET = 'push_button blue';
 
 
 console.log('Better WatchSeries has loaded. Hello there.');
+console.log('Version: ' + GM_info.script.version);
+
 var redirected = false;
 
 var buttons = ['Video', 'Play', 'Yes', 'watch', 'Continue', 'Please', 'wait', 'Free', 'Continue as Free User', WS_BUTTON];
 
 var url = location.href;
 console.log('Detected URL: ' + url);
+
 var WS_URL = WS_DOMAIN + '/' + WS_PATH;
 
 
