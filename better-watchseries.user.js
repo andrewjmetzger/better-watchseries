@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.4.0
+// @version      1.4.1
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
@@ -24,8 +24,7 @@
 **************************************************/
 
 
-// WS_DOMAIN : The current WatchSeries domain. 
-//             For example, `www.watchseries.to`. (Case-insensitive)
+// WS_DOMAIN : The current WatchSeries domain. For example, `watchseries.to`. (Case-insensitive)
 
 WS_DOMAIN = 'www.dwatchseries.ac';
 
@@ -38,7 +37,7 @@ WS_PATH = 'link';
 
 
 // WS_BUTTON : After clicking on a video link, the text of the button that goes to the video host.
-//             For example, `Click here to play`. (Case-sensitive)
+//               For example, `Click here to play`. (Case-sensitive)
 
 WS_BUTTON = 'Click Here to Play';
 
@@ -68,7 +67,7 @@ else if (inArray(url, ['/pc/'])) {
   location.href = url.replace('/pc/', '/playerframe.php?Id=').replace(/\/$/, '');
 }
 else if (inArray(url, [WS_DOMAIN + '/' + WS_PATH])) {
-    console.log('At WS; Redirecting to : ' + getElementsByClassName($(WS_TARGET)).attr('href'));
+    console.log('At WS; Redirecting to : ' + document.getElementsByClassName($(WS_TARGET)).attr('href'));
   // location.href = getElementsByClassName($(WS_TARGET)).attr('href');
 }
 else if (findSubmit()) { }
