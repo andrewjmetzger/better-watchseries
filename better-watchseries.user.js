@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.6.3
+// @version      1.6.4
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
@@ -42,9 +42,9 @@ WS_PATH = 'link';
 WS_BUTTON = 'Click Here to Play';
 
 
-// WS_TARGET : The CSS class for WS_BUTTON. Don't change it if you don't understand. (Case-sensitive)
+// WS_TARGET : The CSS class for the footer. Don't change it if you don't understand. (Case-sensitive)
 
-WS_TARGET = 'push_button blue';
+WS_TARGET = ' video-footer';
 
 
 /*************************************************
@@ -73,7 +73,8 @@ else if (inArray(url, ['/pc/'])) {
 }
 else if (url.indexOf(WS_URL) != -1) {
     console.log("Site found: WatchSeries");
-    dest = document.getElementsByClassName(WS_TARGET)[0].href;
+    dest =  document.getElementsByClassName(WS_TARGET)[0].children[2].href;
+    dest = dest.toString();
     console.log('dest == ' + dest);
     console.log('Redirecting to : ' + dest);
   // location.href = dest;
