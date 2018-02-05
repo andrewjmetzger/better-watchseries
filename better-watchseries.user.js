@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.6.2
+// @version      1.6.3
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
@@ -72,11 +72,11 @@ else if (inArray(url, ['/pc/'])) {
   location.href = url.replace('/pc/', '/playerframe.php?Id=').replace(/\/$/, '');
 }
 else if (url.indexOf(WS_URL) != -1) {
-  tmp = document.getElementsByClassName(WS_TARGET);
-  dest = tmp.href;
-  console.log('dest == ' + dest);
-  console.log('At WS; Redirecting to : ' + dest);
-  // location.href = getElementsByClassName($(WS_TARGET)).attr('href');
+    console.log("Site found: WatchSeries");
+    dest = document.getElementsByClassName(WS_TARGET)[0].href;
+    console.log('dest == ' + dest);
+    console.log('Redirecting to : ' + dest);
+  // location.href = dest;
 }
 else if (findSubmit()) { }
 
