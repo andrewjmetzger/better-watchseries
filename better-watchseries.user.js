@@ -12,10 +12,10 @@
 // @grant        unsafeWindow
 // 
 // @include      http://*.dwatchseries.ac/*
-// @include      http*://*.daclips.in/*
-// @include      http*://*.gorillavid.in/*
-// @include      http*://*.movpod.in/*
-// @include      http*://*.thevideo.cc/*
+// @include      http://*.daclips.in/*
+// @include      http://*.gorillavid.in/*
+// @include      http://*.movpod.in/*
+// @include      https://*.thevideo.cc/*
 // ==/UserScript==
 
 
