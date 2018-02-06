@@ -6,8 +6,9 @@
 // @license      MIT
 //
 // @namespace    https://github.com/andrewjmetzger/
+// @supportURL   https://github.com/andrewjmetzger/better-watchseries
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.10.3
+// @version      1.10.4
 //
 // @grant        unsafeWindow
 // @run-at       document-end
@@ -17,6 +18,7 @@
 // @match        *://*.gorillavid.in/*
 // @match        *://*.movpod.in/*
 // @match        *://*.thevideo.cc/*
+// @match        *://*.streamplay.top/*
 // ==/UserScript==
 
 
@@ -58,7 +60,7 @@ var WS_URL = WS_DOMAIN + '/' + WS_PATH;
 
 
 if (url.indexOf(WS_URL) != -1) {
-    console.log("Site found: WatchSeries");
+    console.log('Site found: WatchSeries');
     dest =  document.getElementsByClassName(WS_TARGET)[0].children[2].href;
     dest = dest.toString();
     console.log('dest == ' + dest);
@@ -75,6 +77,7 @@ function checkHosts(hosts) {
 
 function clickButton(button, hosts) {
     button.disabled = false;
+    
     button.click();
 }
 
@@ -100,7 +103,7 @@ function clickButtonByClassOnHosts(buttonClass, hosts) {
 }
 
 try {
-    var hosts = ['gorillavid.in', 'daclips.in', 'movpod.in'];
+    var hosts = ['gorillavid.in', 'daclips.in', 'movpod.in', 'streamplay.top'];
     clickButtonByIdOnHosts('btn_download', hosts);
 
     var hosts = ['thevideo.cc'];
