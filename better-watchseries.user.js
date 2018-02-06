@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.10.1
+// @version      1.10.2
 //
 // @grant        unsafeWindow
 // @run-at       document-idle
@@ -111,7 +111,7 @@ try {
     clickButtonByIdOnHosts('btn_download', hosts);
 
     var hosts = ['thevideo.cc'];
-    clickButtonByClassOnHosts('.btn .btn-lg .btn-primary .bottom-buffer');
+    clickButtonByClassOnHosts('button.btn.btn-lg.btn-primary.bottom-buffer');
     
     } catch(err) {
     console.log('Sorry, could not click the button.');
