@@ -7,15 +7,16 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.7.0
+// @version      1.7.1
 //
 // @grant        unsafeWindow
-// @include      http://*/rc.php?Id=*
-// @include      http://*/videos.php?Id=*
-// @include      http://*.daclips.in/*
-// @include      http://*.gorillavid.in/*
-// @include      http://*.movpod.in/*
+// 
 // @include      http://*.dwatchseries.ac/*
+// @include      http*://*.daclips.in/*
+// @include      http*://*.gorillavid.in/*
+// @include      http*://*.movpod.in/*
+// @include      http*://*.thevideo.cc/*
+
 // ==/UserScript==
 
 
