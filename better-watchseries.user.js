@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.9.0
+// @version      1.10.0
 //
 // @grant        unsafeWindow
 // 
@@ -56,12 +56,8 @@ WS_TARGET = ' video-footer';
 console.log('Better WatchSeries has loaded. Hello there.');
 console.log('Version: ' + GM_info.script.version);
 
-var redirected = false;
-
-var buttons = ['Video', 'Play', 'Yes', 'watch', 'Continue', 'Please', 'wait', 'Free', 'Continue as Free User', WS_BUTTON];
-
 var url = location.href;
-console.log('Detected URL: ' + url);
+console.log('Current URL: ' + url);
 
 var WS_URL = WS_DOMAIN + '/' + WS_PATH;
 
@@ -101,15 +97,10 @@ function clickButtonByNameOnHosts(buttonName, hosts) {
     } catch (err) {}
 }
 
-function clickButtonByTextOnHosts(text) {
+function clickButtonByClassOnHosts(buttonClass) {
     if (checkHosts(hosts)) try {
-        var button = document.getElementsByTagName("button");
-        for (var i = 0; i < button.length; i++) {
-            var content = button[i].innerHTML;
-            if (content.indexOf(text) != -1) {
-                clickButton(button[i]);
-            }
-        }
+        var button = document.querySelector(buttonClass);
+        clickButton(button);
     } catch (err) {}
 }
 
@@ -119,7 +110,7 @@ try {
     clickButtonByIdOnHosts('btn_download', hosts);
 
     var hosts = ['thevideo.cc'];
-    clickButtonByTextOnHosts('Proceed to Video');
+    clickButtonByClassOnHosts('.btn .btn-lg .btn-primary .bottom-buffer');
     
     } catch(err) {
     console.log('Sorry, could not click the button.');
