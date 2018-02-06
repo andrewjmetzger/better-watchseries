@@ -29,7 +29,7 @@ _Providing these details is optional, though appreciated. Feel free to remove an
 ## Landing page screenshot
 
 _Attach a screenshot of the page you want Better WatchSeries to bypass for you. 
-If you can, draw a box around the button that needs to be clicked to get to the video, [like this](better-watchseries/.github/ISSUE_TEMPLATE/host_request_example.png). 
+If you can, draw a box around the button that needs to be clicked to get to the video, [like this](https://raw.githubusercontent.com/andrewjmetzger/better-watchseries/master/.github/ISSUE_TEMPLATE/host_request_example.png). 
 Having trouble attaching your screenshot? GitHub has [a guide](https://help.github.com/articles/file-attachments-on-issues-and-pull-requests/) for attaching the screenshot to this issue._
 
 <!-- Remove the text below if you did not draw a box around the appropriate button, or change it if you did. -->
