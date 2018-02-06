@@ -7,16 +7,16 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.10.2
+// @version      1.10.3
 //
 // @grant        unsafeWindow
-// @run-at       document-idle
+// @run-at       document-end
 // 
-// @include      http://*.dwatchseries.ac/*
-// @include      http://*.daclips.in/*
-// @include      http://*.gorillavid.in/*
-// @include      http://*.movpod.in/*
-// @include      https://*.thevideo.cc/*
+// @match        *://*.dwatchseries.ac/*
+// @match        *://*.daclips.in/*
+// @match        *://*.gorillavid.in/*
+// @match        *://*.movpod.in/*
+// @match        *://*.thevideo.cc/*
 // ==/UserScript==
 
 
@@ -36,12 +36,6 @@ WS_DOMAIN = 'www.dwatchseries.ac';
 //           WS_PATH is `link`. (Case-insensitive)
 
 WS_PATH = 'link';
-
-
-// WS_BUTTON : After clicking on a video link, the text of the button that goes to the video host.
-//               For example, `Click here to play`. (Case-sensitive)
-
-WS_BUTTON = 'Click Here to Play';
 
 
 // WS_TARGET : The CSS class for the footer. Don't change it if you don't understand. (Case-sensitive)
@@ -98,7 +92,7 @@ function clickButtonByNameOnHosts(buttonName, hosts) {
     } catch (err) {}
 }
 
-function clickButtonByClassOnHosts(buttonClass) {
+function clickButtonByClassOnHosts(buttonClass, hosts) {
     if (checkHosts(hosts)) try {
         var button = document.querySelector(buttonClass);
         clickButton(button);
@@ -106,12 +100,11 @@ function clickButtonByClassOnHosts(buttonClass) {
 }
 
 try {
-    // HOSTS //
     var hosts = ['gorillavid.in', 'daclips.in', 'movpod.in'];
     clickButtonByIdOnHosts('btn_download', hosts);
 
     var hosts = ['thevideo.cc'];
-    clickButtonByClassOnHosts('button.btn.btn-lg.btn-primary.bottom-buffer');
+    clickButtonByClassOnHosts('button.btn.btn-lg.btn-primary.bottom-buffer', hosts);
     
     } catch(err) {
     console.log('Sorry, could not click the button.');
