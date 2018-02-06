@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.10.5
+// @version      1.10.6
 //
 // @grant        unsafeWindow
 // @run-at       document-end
@@ -18,6 +18,7 @@
 // @match        *://*.movpod.in/*
 // @match        *://*.thevideo.cc/*
 // @match        *://*.streamplay.top/*
+// @match        *://*.vidto.me/*
 // ==/UserScript==
 
 /*************************************************
@@ -104,7 +105,7 @@ function clickButtonByClassOnHosts(buttonClass, hosts) {
 }
 
 try {
-    var hosts = ["gorillavid.in", "daclips.in", "movpod.in", "streamplay.top"];
+    var hosts = ["gorillavid.in", "daclips.in", "movpod.in", "streamplay.top", "vidto.me"];
     clickButtonByIdOnHosts("btn_download", hosts);
 
     var hosts = ["thevideo.cc"];
