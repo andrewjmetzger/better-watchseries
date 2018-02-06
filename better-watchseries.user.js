@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.6.5
+// @version      1.7.0
 //
 // @grant        unsafeWindow
 // @include      http://*/rc.php?Id=*
@@ -17,6 +17,7 @@
 // @include      http://*.movpod.in/*
 // @include      http://*.dwatchseries.ac/*
 // ==/UserScript==
+
 
 /*************************************************
 *     SETTINGS START HERE - CHANGE SOME STUFF    *
@@ -65,13 +66,7 @@ console.log('Detected URL: ' + url);
 var WS_URL = WS_DOMAIN + '/' + WS_PATH;
 
 
-if (inArray(url, ['/rc.php?'])) {
-  location.href = url.replace('/rc.php?', '/videos.php?');
-}
-else if (inArray(url, ['/pc/'])) {
-  location.href = url.replace('/pc/', '/playerframe.php?Id=').replace(/\/$/, '');
-}
-else if (url.indexOf(WS_URL) != -1) {
+if (url.indexOf(WS_URL) != -1) {
     console.log("Site found: WatchSeries");
     dest =  document.getElementsByClassName(WS_TARGET)[0].children[2].href;
     dest = dest.toString();
@@ -79,68 +74,54 @@ else if (url.indexOf(WS_URL) != -1) {
     console.log('Redirecting to : ' + dest);
     location.href = dest;
 }
-else if (findSubmit()) { }
 
-else if (!redirected) {
-  var arrFn = ['closead', 'player_start', 'hideOverlay', ];
-  for (var i in arrFn) {
-    if (typeof unsafeWindow[arrFn[i]] === 'function') {
-      unsafeWindow[arrFn[i]]();
+function checkHosts(hosts) {
+    for (i in hosts) if (window.location.hostname == hosts[i] || window.location.hostname == 'www.' + hosts[i]) {
+	return true;
     }
-  }
-
+    return false;
 }
 
-function inArray(strData, arrFind) {
-  for (var i in arrFind) {
-    if (strData.indexOf(arrFind[i]) >= 0) {
-      return true;
-    }
-  }
-  return false;
+function clickButton(button, hosts) {
+    button.disabled = false;
+    button.click();
 }
 
-function findForm() {
-  if (document.forms) {
-    for (var x in document.forms) {
-      if (document.forms[x] && document.forms[x].getElementsByTagName) {
-        var inputs = document.forms[x].getElementsByTagName('input');
-        if (inputs) {
-          for (var y in inputs) {
-            if (inputs[y] && inputs[y].getAttribute && inputs[y].getAttribute('type') === 'submit' && inArray(inputs[y].getAttribute('value'), buttons)) {
-              console.log(inputs[y], inputs[y].click);
-              redirected = true;
-              inputs[y].click();
-              console.log('Button found: Clicked the button called \'' + inputs[y].value + '\' (findForm).');
-              // document.forms[x].submit();
-              return true;
+function clickButtonByIdOnHosts(buttonId, hosts) {
+    if (checkHosts(hosts)) try {
+	var button = document.getElementById(buttonId);
+	clickButton(button);
+    } catch (err) {}
+}
+
+function clickButtonByNameOnHosts(buttonName, hosts) {
+    if (checkHosts(hosts)) try {
+	var button = document.getElementsByName(buttonName)[0];
+	clickButton(button);
+    } catch (err) {}
+}
+
+function clickButtonByTextOnHosts(text) {
+    if (checkHosts(hosts)) try {
+        var buttons = document.querySelectorAll('button');
+        for (var i = 0, l = buttons.length; i < l; i++) {
+            if (buttons[i].firstChild.nodeValue.trim().indexOf(text) !=-1) {
+                console.console.log('Button text match! ' + i);
+                button = buttons[i];
             }
-          }
         }
-      }
-    }
-  }
-  return false;
+        clickButton(button);
+    } catch (err) {}
 }
 
-function findSubmit() {
-  if (document.forms) {
-    var inputs = document.getElementsByTagName('input');
-    if (inputs) {
-      for (var y in inputs) {
-        if (inputs[y] && inputs[y].getAttribute && inputs[y].getAttribute('type') === 'submit' && inArray(inputs[y].getAttribute('value'), buttons)) {
-          redirected = true;
-          if (inputs[y].mousedown) {
-            inputs[y].mousedown();
-          }
-          else if (inputs[y].click) {
-            inputs[y].click();
-          }
-          console.log('Button found: Clicked the button called \'' + inputs[y].value + '\' (findSubmit).');
-          return true;
-        }
-      }
+try {
+    // HOSTS //
+    var hosts = ['gorillavid.in', 'daclips.in', 'movpod.in'];
+    clickButtonByIdOnHosts('btn_download', hosts);
+
+    var hosts = ['thevideo.cc'];
+    clickButtonByTextOnHosts('Proceed to Video');
+    
+    } catch(err) {
+    console.log('Sorry, could not click the button.');
     }
-  }
-  return false;
-}
