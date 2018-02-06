@@ -7,9 +7,10 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.10.0
+// @version      1.10.1
 //
 // @grant        unsafeWindow
+// @run-at       document-idle
 // 
 // @include      http://*.dwatchseries.ac/*
 // @include      http://*.daclips.in/*
