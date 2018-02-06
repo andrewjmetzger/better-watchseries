@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.7.2
+// @version      1.9.0
 //
 // @grant        unsafeWindow
 // 
@@ -103,14 +103,13 @@ function clickButtonByNameOnHosts(buttonName, hosts) {
 
 function clickButtonByTextOnHosts(text) {
     if (checkHosts(hosts)) try {
-        var buttons = document.querySelectorAll('button');
-        for (var i = 0, l = buttons.length; i < l; i++) {
-            if (buttons[i].firstChild.nodeValue.trim().indexOf(text) !=-1) {
-                console.console.log('Button text match! ' + i);
-                button = buttons[i];
+        var button = document.getElementsByTagName("button");
+        for (var i = 0; i < button.length; i++) {
+            var content = button[i].innerHTML;
+            if (content.indexOf(text) != -1) {
+                clickButton(button[i]);
             }
         }
-        clickButton(button);
     } catch (err) {}
 }
 
