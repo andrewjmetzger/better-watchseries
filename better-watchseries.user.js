@@ -7,12 +7,13 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.10.8
+// @version      2.0.0
 //
 // @grant        unsafeWindow
 // @run-at       document-end
 //
 // @match        *://*.dwatchseries.ac/*
+// @match        *://*.seriesfree.to/*
 // @match        *://*.auroravid.to/*
 // @match        *://*.daclips.in/*
 // @match        *://*.gorillavid.in/*
@@ -26,22 +27,22 @@
  *  Warning: Leave the semicolons alone, or else  *
  **************************************************/
 
-// WS_DOMAIN : The current WatchSeries domain. For example, `watchseries.to`.
-//             (Case-insensitive)
+// WS_DOMAIN : An optional custom WatchSeries domain. Don't change this if you don't need to.
+//             For example, `watchseries.to`. (Case-insensitive)
 
-WS_DOMAIN = "www.dwatchseries.ac";
+var WS_DOMAIN = "www.example.com";
 
 // WS_PATH : In the full URL of a video on WatchSeries, the part after the
 //           domain, and before the video host. Usually just one word.
-//           For example, in `http://watchseries.ac/link/some-host.not/12345678`,
-//           WS_PATH is `link`. (Case-insensitive)
+//           For example, in `https://seriesfree.to/open/cale/319349c-aabbcc.html`,
+//           WS_PATH is `open/cale`. (Case-sensitive)
 
-WS_PATH = "link";
+var WS_PATH = "path/to/foo";
 
-// WS_TARGET : The CSS class for the WatchSeries footer. Leave it alone unless
-//             you undersand exactly what this does. (Case-sensitive)
+// WS_TARGET : The CSS class for the video host link. Used with document.querySelector()
+//             Leave it alone unless you understand exactly what this does. (Case-sensitive)
 
-WS_TARGET = "video-footer";
+var WS_TARGET_CLASS = "bar-baz";
 
 /*************************************************
  *      END OF SETTINGS - STOP CHANGING STUFF     *
@@ -53,16 +54,39 @@ console.log("Version: " + GM_info.script.version);
 var url = location.href;
 console.log("Current URL: " + url);
 
+WS_DOMAIN = WS_DOMAIN.toLocaleLowerCase();
+
 var WS_URL = WS_DOMAIN + "/" + WS_PATH;
 
-if (url.indexOf(WS_URL) != -1) {
-    console.log("Site found: " + WS_DOMAIN);
-    dest = document.getElementsByClassName(WS_TARGET)[0].children[2].href;
+if (url.indexOf("dwatchseries.ac/link") != -1) {
+    console.log("Site found: dwatchseries.ac");
+    dest = document.querySelector("body > div.container > div > div > center > p > a:nth-child(3)").href;
     dest = dest.toString();
     console.log("dest == " + dest);
     console.log("Redirecting to : " + dest);
     location.href = dest;
 }
+
+else if (url.indexOf("seriesfree.to/open/cale") != -1) {
+    console.log("Site found: seriesfree.to");
+    dest = document.querySelector("#app > section > div.view.cf > div > div \
+                                  > article:nth-child(8) > div.actions.grid-1.grid-lg-8-24 > a").href;
+    dest = dest.toString();
+    console.log("dest == " + dest);
+    console.log("Redirecting to : " + dest);
+    location.href = dest;
+}
+
+else if (url.indexOf(WS_URL) != -1) {
+    console.log("Site found: " + WS_DOMAIN);
+    
+    dest = document.querySelector(WS_TARGET_CLASS).href
+    dest = dest.toString();
+    console.log("dest == " + dest);
+    console.log("Redirecting to : " + dest);
+    location.href = dest;
+}
+
 
 function checkHosts(hosts) {
     for (i in hosts)
@@ -96,10 +120,10 @@ function clickButtonByNameOnHosts(buttonName, hosts) {
         } catch (err) {}
 }
 
-function clickButtonByClassOnHosts(buttonClass, hosts) {
+function clickButtonBySelectorOnHosts(buttonSelector, hosts) {
     if (checkHosts(hosts))
         try {
-            var button = document.querySelector(buttonClass);
+            var button = document.querySelector(buttonSelector);
             clickButton(button);
         } catch (err) {}
 }
@@ -109,10 +133,7 @@ try {
     clickButtonByIdOnHosts("btn_download", hosts);
     
     var hosts = ["thevideo.cc"];
-    clickButtonByClassOnHosts(
-        "button.btn.btn-lg.btn-primary.bottom-buffer",
-        hosts,
-    );
+    clickButtonBySelectorOnHosts("button.btn.btn-lg.btn-primary.bottom-buffer", hosts);
     
     var hosts = ["nowvideo.to", "auroravid.to"];
     clickButtonByNameOnHosts("submit", hosts);
