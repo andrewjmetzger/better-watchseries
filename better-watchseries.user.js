@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      2.0.0
+// @version      2.0.1
 //
 // @grant        unsafeWindow
 // @run-at       document-end
@@ -18,8 +18,9 @@
 // @match        *://*.daclips.in/*
 // @match        *://*.gorillavid.in/*
 // @match        *://*.movpod.in/*
-// @match        *://*.thevideo.cc/*
 // @match        *://*.nowvideo.to/*
+// @match        *://*.thevideo.cc/*
+// @match        *://*.vidup.me/*
 // ==/UserScript==
 
 /*************************************************
@@ -129,13 +130,13 @@ function clickButtonBySelectorOnHosts(buttonSelector, hosts) {
 }
 
 try {
-    var hosts = ["gorillavid.in", "daclips.in", "movpod.in"]; 
+    var hosts = ["daclips.in", "gorillavid.in", "movpod.in", "vidup.me"]; 
     clickButtonByIdOnHosts("btn_download", hosts);
     
     var hosts = ["thevideo.cc"];
     clickButtonBySelectorOnHosts("button.btn.btn-lg.btn-primary.bottom-buffer", hosts);
     
-    var hosts = ["nowvideo.to", "auroravid.to"];
+    var hosts = [ "auroravid.to", "nowvideo.to"];
     clickButtonByNameOnHosts("submit", hosts);
     
 } catch (err) {
