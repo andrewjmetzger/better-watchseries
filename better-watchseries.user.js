@@ -7,17 +7,17 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.10.7
+// @version      1.10.8
 //
 // @grant        unsafeWindow
 // @run-at       document-end
 //
 // @match        *://*.dwatchseries.ac/*
+// @match        *://*.auroravid.to/*
 // @match        *://*.daclips.in/*
 // @match        *://*.gorillavid.in/*
 // @match        *://*.movpod.in/*
 // @match        *://*.thevideo.cc/*
-// @match        *://*.streamplay.top/*
 // @match        *://*.nowvideo.to/*
 // ==/UserScript==
 
@@ -41,7 +41,7 @@ WS_PATH = "link";
 // WS_TARGET : The CSS class for the WatchSeries footer. Leave it alone unless
 //             you undersand exactly what this does. (Case-sensitive)
 
-WS_TARGET = " video-footer";
+WS_TARGET = "video-footer";
 
 /*************************************************
  *      END OF SETTINGS - STOP CHANGING STUFF     *
@@ -56,15 +56,13 @@ console.log("Current URL: " + url);
 var WS_URL = WS_DOMAIN + "/" + WS_PATH;
 
 if (url.indexOf(WS_URL) != -1) {
-    console.log("Site found: WatchSeries");
+    console.log("Site found: " + WS_DOMAIN);
     dest = document.getElementsByClassName(WS_TARGET)[0].children[2].href;
     dest = dest.toString();
     console.log("dest == " + dest);
     console.log("Redirecting to : " + dest);
     location.href = dest;
 }
-
-var wait = ms => new Promise((r, j)=>setTimeout(r, ms));
 
 function checkHosts(hosts) {
     for (i in hosts)
@@ -107,11 +105,7 @@ function clickButtonByClassOnHosts(buttonClass, hosts) {
 }
 
 try {
-    var hosts = ["gorillavid.in", "daclips.in", "movpod.in"]; // No delay
-    clickButtonByIdOnHosts("btn_download", hosts);
-
-    var hosts = ["streamplay.top"]; // 6-second delay
-    wait(6000);
+    var hosts = ["gorillavid.in", "daclips.in", "movpod.in"]; 
     clickButtonByIdOnHosts("btn_download", hosts);
     
     var hosts = ["thevideo.cc"];
@@ -120,7 +114,7 @@ try {
         hosts,
     );
     
-    var hosts = ['nowvideo.to'];
+    var hosts = ["nowvideo.to", "auroravid.to"];
     clickButtonByNameOnHosts("submit", hosts);
     
 } catch (err) {
