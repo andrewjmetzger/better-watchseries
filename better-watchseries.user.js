@@ -64,6 +64,8 @@ if (url.indexOf(WS_URL) != -1) {
     location.href = dest;
 }
 
+var wait = ms => new Promise((r, j)=>setTimeout(r, ms));
+
 function checkHosts(hosts) {
     for (i in hosts)
         if (
@@ -105,9 +107,13 @@ function clickButtonByClassOnHosts(buttonClass, hosts) {
 }
 
 try {
-    var hosts = ["gorillavid.in", "daclips.in", "movpod.in", "streamplay.top"];
+    var hosts = ["gorillavid.in", "daclips.in", "movpod.in"]; // No delay
     clickButtonByIdOnHosts("btn_download", hosts);
 
+    var hosts = ["streamplay.top"]; // 6-second delay
+    wait(6000);
+    clickButtonByIdOnHosts("btn_download", hosts);
+    
     var hosts = ["thevideo.cc"];
     clickButtonByClassOnHosts(
         "button.btn.btn-lg.btn-primary.bottom-buffer",
