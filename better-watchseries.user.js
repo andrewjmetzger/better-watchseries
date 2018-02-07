@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      1.10.5
+// @version      1.10.6
 //
 // @grant        unsafeWindow
 // @run-at       document-end
@@ -18,6 +18,7 @@
 // @match        *://*.movpod.in/*
 // @match        *://*.thevideo.cc/*
 // @match        *://*.streamplay.top/*
+// @match        *://*.nowvideo.to/*
 // ==/UserScript==
 
 /*************************************************
@@ -112,6 +113,10 @@ try {
         "button.btn.btn-lg.btn-primary.bottom-buffer",
         hosts,
     );
+    
+    var hosts = ['nowvideo.to'];
+    clickButtonByNameOnHosts("submit", hosts);
+    
 } catch (err) {
     console.log("Error: Better WatchSeries could not click the button.");
 }
