@@ -7,11 +7,11 @@ A Userscript that skips countdowns and intersitial loading pages on WatchSeries 
 - WatchSeries:
     - http://dwatchseries.ac
 - Video hosts:
+    - http://auroravid.to
     - http://daclips.in
     - http://gorillavid.in
     - http://movpod.in
     - http://nowvideo.to
-    - http://streamplay.top
     - https://thevideo.cc
 
 # Requesting new video hosts
