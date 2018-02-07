@@ -5,15 +5,16 @@ A Userscript that skips countdowns and intersitial loading pages on WatchSeries 
 # Supported sites
 
 - WatchSeries:
-    - http://dwatchseries.ac
-    - http://seriesfree.to
+    - dwatchseries.ac
+    - seriesfree.to
 - Video hosts:
-    - http://auroravid.to
-    - http://daclips.in
-    - http://gorillavid.in
-    - http://movpod.in
-    - http://nowvideo.to
-    - https://thevideo.cc
+    - auroravid.to
+    - daclips.in
+    - gorillavid.in
+    - movpod.in
+    - nowvideo.to
+    - thevideo.cc
+    - vidup.me
 
 # Requesting new video hosts
 
