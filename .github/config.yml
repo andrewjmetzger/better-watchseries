@@ -5,7 +5,7 @@ newIssueWelcomeComment: |
   👋 Thanks for opening your first issue here! If you're reporting a 🐞 bug, please make sure you include steps to reproduce it. 
   We are a small team, and issues can pile up, so please be patient and we will get back to you as soon as we can.
 
-  To help make it easier for us to investigate your issue, please follow the [contributing guidelines].
+  To help make it easier for us to investigate your issue, please follow the [contributing guidelines](CONTRIBUTING.md).
 
 # Configuration for new-pr-welcome - https://github.com/behaviorbot/new-pr-welcome
 
