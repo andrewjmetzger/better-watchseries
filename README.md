@@ -18,6 +18,7 @@ A Userscript that skips countdowns and intersitial loading pages on WatchSeries 
     - nowvideo.to
     - thevideo.cc
     - vidup.me
+    - wholecloud.net
 
 # Requesting new video hosts
 
