@@ -7,7 +7,6 @@ A Userscript that skips countdowns and intersitial loading pages on WatchSeries 
 # Supported sites
 
 - WatchSeries:
-    - dwatchseries.ac
     - thewatchseries.ac
     - seriesfree.to
 - Video hosts:
