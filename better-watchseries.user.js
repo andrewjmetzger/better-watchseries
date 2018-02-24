@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      2.1.1
+// @version      2.1.2
 //
 // @grant        unsafeWindow
 // @run-at       document-end
@@ -22,6 +22,7 @@
 // @match        *://*.nowvideo.to/*
 // @match        *://*.thevideo.cc/*
 // @match        *://*.vidup.me/*
+// @match        *://*.wholecloud.net/*
 // ==/UserScript==
 
 /*************************************************
@@ -137,7 +138,7 @@ try {
     var hosts = ["thevideo.cc"];
     clickButtonBySelectorOnHosts("button.btn.btn-lg.btn-primary.bottom-buffer", hosts);
     
-    var hosts = [ "auroravid.to", "bitvid.sx", "nowvideo.to"];
+    var hosts = [ "auroravid.to", "bitvid.sx", "nowvideo.to", "wholecloud.net"];
     clickButtonByNameOnHosts("submit", hosts);
     
 } catch (err) {
