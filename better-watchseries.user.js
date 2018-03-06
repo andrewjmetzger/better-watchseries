@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      2.1.3
+// @version      2.2.0
 //
 // @grant        unsafeWindow
 // @run-at       document-end
@@ -21,6 +21,7 @@
 // @match        *://*.movpod.in/*
 // @match        *://*.nowvideo.to/*
 // @match        *://*.thevideo.cc/*
+// @match        *://*.thevideo.website/*
 // @match        *://*.vidup.me/*
 // @match        *://*.wholecloud.net/*
 // ==/UserScript==
@@ -82,7 +83,7 @@ else if (url.indexOf("seriesfree.to/open/cale") != -1) {
 
 else if (url.indexOf(WS_URL) != -1) {
     console.log("Site found: " + WS_DOMAIN);
-    
+
     dest = document.querySelector(WS_TARGET_CLASS).href
     dest = dest.toString();
     console.log("dest == " + dest);
@@ -132,15 +133,15 @@ function clickButtonBySelectorOnHosts(buttonSelector, hosts) {
 }
 
 try {
-    var hosts = ["daclips.in", "gorillavid.in", "movpod.in", "vidup.me"]; 
+    var hosts = ["daclips.in", "gorillavid.in", "movpod.in", "vidup.me"];
     clickButtonByIdOnHosts("btn_download", hosts);
-    
-    var hosts = ["thevideo.cc"];
+
+    var hosts = ["thevideo.cc", "thevideo.website"];
     clickButtonBySelectorOnHosts("button.btn.btn-lg.btn-primary.bottom-buffer", hosts);
-    
+
     var hosts = [ "auroravid.to", "bitvid.sx", "nowvideo.to", "wholecloud.net"];
     clickButtonByNameOnHosts("submit", hosts);
-    
+
 } catch (err) {
     console.log("Error: Better WatchSeries could not click the button.");
 }

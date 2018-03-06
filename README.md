@@ -17,6 +17,7 @@ A Userscript that skips countdowns and intersitial loading pages on WatchSeries 
     - movpod.in
     - nowvideo.to
     - thevideo.cc
+    - thevideo.website
     - vidup.me
     - wholecloud.net
 
