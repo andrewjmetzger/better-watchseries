@@ -7,11 +7,12 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      2.2.1
+// @version      2.3.0
 //
 // @grant        unsafeWindow
 // @run-at       document-end
 //
+// @match        *://*.dwatchseries.to/*
 // @match        *://*.thewatchseries.ac/*
 // @match        *://*.seriesfree.to/*
 // @match        *://*.auroravid.to/*
@@ -62,8 +63,8 @@ WS_DOMAIN = WS_DOMAIN.toLocaleLowerCase();
 
 var WS_URL = WS_DOMAIN + "/" + WS_PATH;
 
-if (url.indexOf("thewatchseries.ac/link") != -1) {
-    console.log("Site found: thewatchseries.ac");
+if (url.indexOf("dwatchseries.to/link") != -1) {
+    console.log("Site found: dwatchseries-like");
     dest = document.querySelector("body > div.container > div > div > center > p > a:nth-child(3)").href;
     dest = dest.toString();
     console.log("dest == " + dest);
@@ -72,7 +73,7 @@ if (url.indexOf("thewatchseries.ac/link") != -1) {
 }
 
 else if (url.indexOf("seriesfree.to/open/cale") != -1) {
-    console.log("Site found: seriesfree.to");
+    console.log("Site found: seriesfree-like");
     dest = document.querySelector("#app > section > div.view.cf > div > div \
                                   > article:nth-child(8) > div.actions.grid-1.grid-lg-8-24 > a").href;
     dest = dest.toString();
