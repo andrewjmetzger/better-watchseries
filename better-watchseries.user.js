@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      2.3.1
+// @version      2.3.2
 //
 // @grant        unsafeWindow
 // @run-at       document-end
@@ -65,7 +65,7 @@ var WS_URL = WS_DOMAIN + "/" + WS_PATH;
 
 if (url.indexOf("dwatchseries.to/freecale.html") != -1) {
     console.log("Site found: dwatchseries-like");
-    dest = document.querySelector("body > div.container > div > div > center > p > a:nth-child(3)").href;
+    dest = document.querySelector("body > div.centeres > div.bk-grey-long > div > div > div > div > div > div > div > div > div > div:nth-child(3) > a").href;
     dest = dest.toString();
     console.log("dest == " + dest);
     console.log("Redirecting to : " + dest);
