@@ -9,7 +9,7 @@
 // @updateURL    https://github.com/andrewjmetzger/better-watchseries/raw/master/better-watchseries.user.js
 // @downloadURL    https://github.com/andrewjmetzger/better-watchseries/raw/master/better-watchseries.user.js
 
-// @version      2.6.0
+// @version      2.6.1
 //
 // @grant        unsafeWindow
 // @run-at       document-end
@@ -25,7 +25,7 @@
 // @match        *://*.openload.co/*
 // @match        *://*.thevideo.cc/*
 // @match        *://*.thevideo.website/*
-// @match        *://*.vidup.me/*
+// @match        *://*.vidup.tv/*
 // @match        *://*.vidzi.tv/*
 // @match        *://*.wholecloud.net/*
 // ==/UserScript==
@@ -142,7 +142,7 @@ function clickButtonBySelectorOnHosts(buttonSelector, hosts) {
 }
 
 try {
-    var hosts = ["daclips.in", "gorillavid.in", "movpod.in", "vidup.me"];
+    var hosts = ["daclips.in", "gorillavid.in", "movpod.in", "vidup.tv"];
     clickButtonByIdOnHosts("btn_download", hosts);
 
     var hosts = ["thevideo.cc", "thevideo.website"];

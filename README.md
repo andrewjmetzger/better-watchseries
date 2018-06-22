@@ -24,7 +24,7 @@ A Userscript that skips countdowns and intersitial loading pages on WatchSeries 
     - openload.co
     - thevideo.cc
     - thevideo.website
-    - vidup.me
+    - vidup.tv
     - vidzi.tv
     - wholecloud.net
 
