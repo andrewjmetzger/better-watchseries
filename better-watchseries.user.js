@@ -9,7 +9,7 @@
 // @updateURL    https://github.com/andrewjmetzger/better-watchseries/raw/master/better-watchseries.user.js
 // @downloadURL    https://github.com/andrewjmetzger/better-watchseries/raw/master/better-watchseries.user.js
 
-// @version      2.5.4
+// @version      2.6.0
 //
 // @grant        unsafeWindow
 // @run-at       document-end
@@ -66,37 +66,6 @@ WS_DOMAIN = WS_DOMAIN.toLocaleLowerCase();
 
 var WS_URL = WS_DOMAIN + "/" + WS_PATH;
 
-/**************************************************
- *              Hide Incompatible Hosts           *
- **************************************************/
-
- (function() {
-     'use strict';
-
-    var favHosts = [
-      'auroravid.to',
-      'bitvid.sx',
-      'daclips.in',
-      'gorillavid.in',
-      'movpod.in',
-      'nowvideo.to',
-      'openload.co',
-      'thevideo.cc',
-      'thevideo.website',
-      'vidup.me',
-      'vidzi.tv',
-      'wholecloud.net'
-    ];
-
-
-    $('.host').each(function(){
-        var span = $(this);
-        if(favHosts.indexOf(span.text()) < 0){
-            var tr = span.closest('tr');
-            tr.css('display', 'none');
-        }
-    });
- })();
 
  /**************************************************
   *                  BUTTON FINDER                 *
