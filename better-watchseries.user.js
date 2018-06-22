@@ -8,7 +8,7 @@
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://github.com/andrewjmetzger/better-watchseries/raw/master/better-watchseries.user.js
 
-// @version      2.4.0
+// @version      2.5.0
 //
 // @grant        unsafeWindow
 // @run-at       document-end
@@ -101,7 +101,7 @@ var WS_URL = WS_DOMAIN + "/" + WS_PATH;
   *                  BUTTON FINDER                 *
   **************************************************/
 
-if (url.indexOf("dwatchseries.to/freecale.html") != -1 || url.indexOf("swatchseries.to/freecale.html") != 1) {
+if (url.indexOf("/freecale.html") != -1) {
     console.log("Site found: freecale-like");
     dest = document.querySelector("body > div.centeres > div.bk-grey-long > div > div > div > div > div > div > div > div > div > div:nth-child(3) > a").href;
     dest = dest.toString();
@@ -110,7 +110,7 @@ if (url.indexOf("dwatchseries.to/freecale.html") != -1 || url.indexOf("swatchser
     location.href = dest;
 }
 
-else if (url.indexOf("seriesfree.to/open/cale") != -1) {
+else if (url.indexOf("/open/cale") != -1) {
     console.log("Site found: open/cale-like");
     dest = document.querySelector("#app > section > div.view.cf > div > div \
                                   > article:nth-child(8) > div.actions.grid-1.grid-lg-8-24 > a").href;
