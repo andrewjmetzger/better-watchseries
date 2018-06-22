@@ -6,7 +6,8 @@
 // @license      MIT
 //
 // @namespace    https://github.com/andrewjmetzger/
-// @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
+// @updateURL    https://github.com/andrewjmetzger/better-watchseries/raw/master/better-watchseries.user.js
+
 // @version      2.4.0
 //
 // @grant        unsafeWindow
