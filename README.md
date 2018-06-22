@@ -4,6 +4,11 @@
 
 A Userscript that skips countdowns and intersitial loading pages on WatchSeries and related video sites.
 
+# Installing
+
+* Install **[Tampermonkey](#)** for Google Chrome
+* Click to **[add the userscript](https://github.com/andrewjmetzger/better-watchseries/raw/master/better-watchseries.user.js)** and visit a supported page
+
 # Supported sites
 
 - WatchSeries:
