@@ -7,15 +7,11 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-<<<<<<< HEAD
 // @version      2.4.0
-=======
-// @version      2.3.3
->>>>>>> 2f41b4f2eea1f190d6b58b6819705c1b794103df
 //
 // @grant        unsafeWindow
 // @run-at       document-end
-// 
+//
 // @match        *://*.seriesfree.to/*
 // @match        *://*.swatchseries.to/*
 // @match        *://*.auroravid.to/*
