@@ -8,7 +8,7 @@
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL    https://github.com/andrewjmetzger/better-watchseries/raw/master/better-watchseries.user.js
 
-// @version      2.5.0
+// @version      2.5.1
 //
 // @grant        unsafeWindow
 // @run-at       document-end
