@@ -9,7 +9,7 @@
 // @updateURL    https://github.com/andrewjmetzger/better-watchseries/raw/master/better-watchseries.user.js
 // @downloadURL    https://github.com/andrewjmetzger/better-watchseries/raw/master/better-watchseries.user.js
 
-// @version      2.5.3
+// @version      2.5.4
 //
 // @grant        unsafeWindow
 // @run-at       document-end
@@ -89,7 +89,7 @@ var WS_URL = WS_DOMAIN + "/" + WS_PATH;
     ];
 
 
-    $('#linktable #myTable td:first-child > span').each(function(){
+    $('.host').each(function(){
         var span = $(this);
         if(favHosts.indexOf(span.text()) < 0){
             var tr = span.closest('tr');
