@@ -7,8 +7,8 @@ A Userscript that skips countdowns and intersitial loading pages on WatchSeries 
 # Supported sites
 
 - WatchSeries:
-    - dwatchseries.to
     - seriesfree.to
+    - swatchseries.to
 - Video hosts:
     - auroravid.to
     - bitvid.sx
@@ -16,9 +16,11 @@ A Userscript that skips countdowns and intersitial loading pages on WatchSeries 
     - gorillavid.in
     - movpod.in
     - nowvideo.to
+    - openload.co
     - thevideo.cc
     - thevideo.website
     - vidup.me
+    - vidzi.tv
     - wholecloud.net
 
 # Requesting new video hosts
