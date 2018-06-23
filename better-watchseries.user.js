@@ -64,91 +64,97 @@ WS_DOMAIN = WS_DOMAIN.toLocaleLowerCase();
 
 var WS_URL = WS_DOMAIN + "/" + WS_PATH;
 
-
- /**************************************************
-  *                  BUTTON FINDER                 *
-  **************************************************/
+/**************************************************
+ *                  BUTTON FINDER                 *
+ **************************************************/
 
 if (url.indexOf("/freecale.html") != -1) {
-    console.log("Site found: freecale-like");
-    dest = document.querySelector("body > div.centeres > div.bk-grey-long > div > div > div > div > div > div > div > div > div > div:nth-child(3) > a").href;
-    dest = dest.toString();
-    console.log("dest == " + dest);
-    console.log("Redirecting to : " + dest);
-    location.href = dest;
+  console.log("Site found: freecale-like");
+  dest = document.querySelector(
+    "body > div.centeres > div.bk-grey-long > div > div > div > div > div > div > div > div > div > div:nth-child(3) > a"
+  ).href;
+  dest = dest.toString();
+  console.log("dest == " + dest);
+  console.log("Redirecting to : " + dest);
+  location.href = dest;
+} else if (url.indexOf("/open/cale") != -1) {
+  console.log("Site found: open/cale-like");
+  dest = document.querySelector(
+    "#app > section > div.view.cf > div > div \
+                                  > article:nth-child(8) > div.actions.grid-1.grid-lg-8-24 > a"
+  ).href;
+  dest = dest.toString();
+  console.log("dest == " + dest);
+  console.log("Redirecting to : " + dest);
+  location.href = dest;
+} else if (url.indexOf(WS_URL) != -1) {
+  console.log("Site found: " + WS_DOMAIN);
+
+  dest = document.querySelector(WS_TARGET_CLASS).href;
+  dest = dest.toString();
+  console.log("dest == " + dest);
+  console.log("Redirecting to : " + dest);
+  location.href = dest;
 }
-
-else if (url.indexOf("/open/cale") != -1) {
-    console.log("Site found: open/cale-like");
-    dest = document.querySelector("#app > section > div.view.cf > div > div \
-                                  > article:nth-child(8) > div.actions.grid-1.grid-lg-8-24 > a").href;
-    dest = dest.toString();
-    console.log("dest == " + dest);
-    console.log("Redirecting to : " + dest);
-    location.href = dest;
-}
-
-else if (url.indexOf(WS_URL) != -1) {
-    console.log("Site found: " + WS_DOMAIN);
-
-    dest = document.querySelector(WS_TARGET_CLASS).href
-    dest = dest.toString();
-    console.log("dest == " + dest);
-    console.log("Redirecting to : " + dest);
-    location.href = dest;
-}
-
 
 function checkHosts(hosts) {
-    for (i in hosts)
-        if (
-            window.location.hostname == hosts[i] ||
-            window.location.hostname == "www." + hosts[i]
-        ) {
-            return true;
-        }
-    return false;
+  for (i in hosts)
+    if (
+      window.location.hostname == hosts[i] ||
+      window.location.hostname == "www." + hosts[i]
+    ) {
+      return true;
+    }
+  return false;
 }
 
 function clickButton(button, hosts) {
-    button.disabled = false;
-    button.click();
+  button.disabled = false;
+  button.click();
 }
 
 function clickButtonByIdOnHosts(buttonId, hosts) {
-    if (checkHosts(hosts))
-        try {
-            var button = document.getElementById(buttonId);
-            clickButton(button);
-        } catch (err) {}
+  if (checkHosts(hosts))
+    try {
+      var button = document.getElementById(buttonId);
+      clickButton(button);
+    } catch (err) {
+      console.error(err.message);
+    }
 }
 
 function clickButtonByNameOnHosts(buttonName, hosts) {
-    if (checkHosts(hosts))
-        try {
-            var button = document.getElementsByName(buttonName)[0];
-            clickButton(button);
-        } catch (err) {}
+  if (checkHosts(hosts))
+    try {
+      var button = document.getElementsByName(buttonName)[0];
+      clickButton(button);
+    } catch (err) {
+      console.error(err.message);
+    }
 }
 
 function clickButtonBySelectorOnHosts(buttonSelector, hosts) {
-    if (checkHosts(hosts))
-        try {
-            var button = document.querySelector(buttonSelector);
-            clickButton(button);
-        } catch (err) {}
+  if (checkHosts(hosts))
+    try {
+      var button = document.querySelector(buttonSelector);
+      clickButton(button);
+    } catch (err) {
+      console.error(err.message);
+    }
 }
 
 try {
-    var hosts = ["daclips.in", "gorillavid.in", "movpod.in", "vidup.tv"];
-    clickButtonByIdOnHosts("btn_download", hosts);
+  var hosts = ["daclips.in", "gorillavid.in", "movpod.in", "vidup.tv"];
+  clickButtonByIdOnHosts("btn_download", hosts);
 
-    var hosts = ["thevideo.cc", "thevideo.website"];
-    clickButtonBySelectorOnHosts("button.btn.btn-lg.btn-primary.bottom-buffer", hosts);
+  var hosts = ["thevideo.cc", "thevideo.website"];
+  clickButtonBySelectorOnHosts(
+    "button.btn.btn-lg.btn-primary.bottom-buffer",
+    hosts
+  );
 
-    var hosts = [ "auroravid.to", "bitvid.sx", "nowvideo.to", "wholecloud.net"];
-    clickButtonByNameOnHosts("submit", hosts);
-
+  var hosts = ["auroravid.to", "bitvid.sx", "nowvideo.to", "wholecloud.net"];
+  clickButtonByNameOnHosts("submit", hosts);
 } catch (err) {
-    console.log("Error: Better WatchSeries could not click the button.");
+  console.log("Error: Better WatchSeries could not click the button.");
 }
