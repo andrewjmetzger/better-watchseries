@@ -7,25 +7,24 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL        https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      2.7.0
+// @version      2.8.0
 //
 // @grant        unsafeWindow
 // @run-at       document-end
 //
 // @match        *://*.seriesfree.to/*
 // @match        *://*.swatchseries.to/*
-// @match        *://*.auroravid.to/*
-// @match        *://*.bitvid.sx/*
+
 // @match        *://*.daclips.in/*
 // @match        *://*.gorillavid.in/*
 // @match        *://*.movpod.in/*
-// @match        *://*.nowvideo.to/*
+// @match        *://*.flix555.com/*
+// @match        *://*.idtbox.com/*
+// @match        *://*.powvideo.net/*
+
+// @match        *://*.vshare.eu/*
+
 // @match        *://*.openload.co/*
-// @match        *://*.thevideo.cc/*
-// @match        *://*.thevideo.website/*
-// @match        *://*.vidup.tv/*
-// @match        *://*.vidzi.tv/*
-// @match        *://*.wholecloud.net/*
 // ==/UserScript==
 
 /**************************************************
@@ -144,17 +143,13 @@ function clickButtonBySelectorOnHosts(buttonSelector, hosts) {
 }
 
 try {
-  var hosts = ["daclips.in", "gorillavid.in", "movpod.in", "vidup.tv"];
+  var hosts = ["daclips.in", "gorillavid.in", "movpod.in", "flix555.com", "idtbox.com", "powvideo.net"];
   clickButtonByIdOnHosts("btn_download", hosts);
 
-  var hosts = ["thevideo.cc", "thevideo.website"];
-  clickButtonBySelectorOnHosts(
-    "button.btn.btn-lg.btn-primary.bottom-buffer",
-    hosts
-  );
-
-  var hosts = ["auroravid.to", "bitvid.sx", "nowvideo.to", "wholecloud.net"];
-  clickButtonByNameOnHosts("submit", hosts);
+  var hosts = ["vshare.eu"]
+  clickButtonByNameOnHosts("method_free", hosts);
+  
+  
 } catch (err) {
   console.log("Error: Better WatchSeries could not click the button.");
 }
