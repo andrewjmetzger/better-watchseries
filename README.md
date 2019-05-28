@@ -15,18 +15,13 @@ A Userscript that skips countdowns and intersitial loading pages on WatchSeries 
     - seriesfree.to
     - swatchseries.to
 - Video hosts:
-    - auroravid.to
-    - bitvid.sx
     - daclips.in
     - gorillavid.in
     - movpod.in
-    - nowvideo.to
-    - openload.co
-    - thevideo.cc
-    - thevideo.website
-    - vidup.tv
-    - vidzi.tv
-    - wholecloud.net
+    - flix555.com
+    - idtbox.com
+    - powvideo.net
+    - vshare.eu
 
 # Requesting new video hosts
 
