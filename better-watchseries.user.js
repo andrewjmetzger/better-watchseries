@@ -7,7 +7,7 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL        https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      2.9.0
+// @version      2.10.0
 //
 // @grant        unsafeWindow
 // @run-at       document-end
@@ -78,8 +78,7 @@ if (url.indexOf("/freecale.html") != -1) {
 } else if (url.indexOf("/open/cale") != -1) {
   console.log("Site found: open/cale-like");
   dest = document.querySelector(
-    "#app > section > div.view.cf > div > div \
-                                  > article:nth-child(8) > div.actions.grid-1.grid-lg-8-24 > a"
+    "#app > section > div.view.cf > div > div > article:nth-child(8) > div.actions.grid-1.grid-lg-8-24 > a"
   ).href;
   dest = dest.toString();
   console.log("dest == " + dest);
