@@ -13,7 +13,6 @@ A Userscript that skips countdowns and intersitial loading pages on WatchSeries 
 
 - WatchSeries:
     - seriesfree.to
-    - swatchseries.to
 - Video hosts:
     - daclips.in
     - gorillavid.in
