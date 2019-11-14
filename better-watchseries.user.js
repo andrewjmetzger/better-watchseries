@@ -7,23 +7,19 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL        https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      2.10.0
+// @version      2.11.0
 //
 // @grant        unsafeWindow
 // @run-at       document-end
 //
+// ******** LINK AGGREGATORS ********
 // @match        *://*.seriesfree.to/*
+// @match        *://*.watchseries.si/*
 //
-// @match        *://*.daclips.in/*
-// @match        *://*.gorillavid.in/*
-// @match        *://*.movpod.in/*
-// @match        *://*.flix555.com/*
-// @match        *://*.idtbox.com/*
+// ******** VIDEO HOSTS *********
 // @match        *://*.powvideo.net/*
-
 // @match        *://*.vshare.eu/*
 
-// @match        *://*.openload.co/*
 // ==/UserScript==
 
 /**************************************************
@@ -34,19 +30,19 @@
 // WS_DOMAIN : An optional custom WatchSeries domain. Don't change this if you don't need to.
 //             For example, `watchseries.to`. (Case-insensitive)
 
-var WS_DOMAIN = "www.example.com";
+var WS_DOMAIN = "watchseries.si";
 
 // WS_PATH : In the full URL of a video on WatchSeries, the part after the
 //           domain, and before the video host. Usually just one word.
 //           For example, in `https://seriesfree.to/open/cale/319349c-aabbcc.html`,
 //           WS_PATH is `open/cale`. (Case-sensitive)
 
-var WS_PATH = "path/to/foo";
+var WS_PATH = "external/";
 
 // WS_TARGET : The CSS class for the video host link. Used with document.querySelector()
 //             Leave it alone unless you understand exactly what this does. (Case-sensitive)
 
-var WS_TARGET_CLASS = "bar-baz";
+var WS_TARGET = "div.video_player.followed.default > div.wrap > a";
 
 /**************************************************
  *      END OF SETTINGS - STOP CHANGING STUFF     *
@@ -87,7 +83,7 @@ if (url.indexOf("/freecale.html") != -1) {
 } else if (url.indexOf(WS_URL) != -1) {
   console.log("Site found: " + WS_DOMAIN);
 
-  dest = document.querySelector(WS_TARGET_CLASS).href;
+  dest = document.querySelector(WS_TARGET).href;
   dest = dest.toString();
   console.log("dest == " + dest);
   console.log("Redirecting to : " + dest);
@@ -141,7 +137,7 @@ function clickButtonBySelectorOnHosts(buttonSelector, hosts) {
 }
 
 try {
-  var hosts = ["daclips.in", "gorillavid.in", "movpod.in", "flix555.com", "idtbox.com", "powvideo.net"];
+  var hosts = ["powvideo.net"];
   clickButtonByIdOnHosts("btn_download", hosts);
 
   var hosts = ["vshare.eu"]
