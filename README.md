@@ -26,7 +26,7 @@ A Userscript that skips countdowns and intersitial loading pages on WatchSeries 
 
 ## Contributing
 
-All contributors should read and aggree to the [Contributor's Guidelines]. Contributions that do not adhere to  these guidelines are subject to removal. PLease note: Even if a contribution follows these guidelines, it is not guaranteed to be accepted into the project.
+All contributors should read and aggree to the [Contributor's Guidelines](https://github.com/andrewjmetzger/better-watchseries/blob/master/CONTRIBUTING.md). Contributions that do not adhere to these guidelines are subject to removal. Please note: Even if a contribution follows these guidelines, it is not guaranteed to be accepted into the project.
 
 ### Requesting new video hosts
 
