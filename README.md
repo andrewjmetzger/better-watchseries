@@ -14,6 +14,7 @@ A Userscript that skips countdowns and intersitial loading pages on WatchSeries 
 ### Link aggregators (WatchSeries)
 
     - seriesfree.to
+    - watchseries.si
 
 ### Video hosts
 
@@ -34,6 +35,6 @@ To request a new video host, [click here](https://github.com/andrewjmetzger/bett
 
 ### PRs and other issues
 
-PRs welcome; please follow the [contributing guidelines](https://github.com/andrewjmetzger/better-watchseries/blob/master/CONTRIBUTING.md).
+PRs welcome; please follow the [Contributor's Guidelines](https://github.com/andrewjmetzger/better-watchseries/blob/master/CONTRIBUTING.md).
 
 For all other matters, please [open an issue](https://github.com/andrewjmetzger/better-watchseries/issues/new). Be sure to read the [guidelines for submitting an issue](https://github.com/andrewjmetzger/better-watchseries/blob/master/CONTRIBUTING.md#submitting-an-issue) first.
