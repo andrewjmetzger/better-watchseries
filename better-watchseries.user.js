@@ -7,14 +7,13 @@
 //
 // @namespace    https://github.com/andrewjmetzger/
 // @updateURL        https://openuserjs.org/meta/andrewjmetzger/Better_WatchSeries.meta.js
-// @version      2.11.0
+// @version      2.12.0
 //
 // @grant        unsafeWindow
 // @run-at       document-end
 //
 // ******** LINK AGGREGATORS ********
-// @match        *://*.seriesfree.to/*
-// @match        *://*.watchseries.si/*
+// @match        *://*.watchseries.video/*
 //
 // ******** VIDEO HOSTS *********
 // @match        *://*.powvideo.net/*
@@ -27,22 +26,23 @@
  *  Warning: Leave the semicolons alone, or else  *
  **************************************************/
 
-// WS_DOMAIN : An optional custom WatchSeries domain. Don't change this if you don't need to.
-//             For example, `watchseries.to`. (Case-insensitive)
+// WS_DOMAIN : An optional custom WatchSeries domain. Largeely used for testing purposes.
+//             For example, `watchseries.video`. (Case-insensitive). 
+//             Must be added in your Tampermonkey script settings as a User match.
 
-var WS_DOMAIN = "watchseries.si";
+var WS_DOMAIN = "";
 
 // WS_PATH : In the full URL of a video on WatchSeries, the part after the
 //           domain, and before the video host. Usually just one word.
 //           For example, in `https://seriesfree.to/open/cale/319349c-aabbcc.html`,
 //           WS_PATH is `open/cale`. (Case-sensitive)
 
-var WS_PATH = "external/";
+var WS_PATH = "";
 
-// WS_TARGET : The CSS class for the video host link. Used with document.querySelector()
-//             Leave it alone unless you understand exactly what this does. (Case-sensitive)
+// WS_TARGET : The CSS class for the video host redirect link. Used with document.querySelector()
+//             Usually the "Click here to continue opening the link" button. (Case-sensitive)
 
-var WS_TARGET = "div.video_player.followed.default > div.wrap > a";
+var WS_TARGET = "";
 
 /**************************************************
  *      END OF SETTINGS - STOP CHANGING STUFF     *
@@ -71,10 +71,10 @@ if (url.indexOf("/freecale.html") != -1) {
   console.log("dest == " + dest);
   console.log("Redirecting to : " + dest);
   location.href = dest;
-} else if (url.indexOf("/open/cale") != -1) {
-  console.log("Site found: open/cale-like");
+} else if (url.indexOf("/open/link") != -1) {
+  console.log("Site found: open/link -like");
   dest = document.querySelector(
-    "#app > section > div.view.cf > div > div > article:nth-child(8) > div.actions.grid-1.grid-lg-8-24 > a"
+    "#link-button > a"
   ).href;
   dest = dest.toString();
   console.log("dest == " + dest);
@@ -142,8 +142,8 @@ try {
 
   var hosts = ["vshare.eu"]
   clickButtonByNameOnHosts("method_free", hosts);
-  
-  
+
+
 } catch (err) {
   console.log("Error: Better WatchSeries could not click the button.");
 }
